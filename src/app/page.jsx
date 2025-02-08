@@ -427,6 +427,12 @@ const PageContent = () => {
               placeholder="Choose"
               className="w-[300px]"
               options={options.Customers}
+              // Search by label
+              filterOption={(input, option) =>
+                (option?.label ?? "")
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
               showSearch
               allowClear
             />
@@ -472,6 +478,12 @@ const PageContent = () => {
               className="w-[300px]"
               options={options.Loaders}
               mode="multiple"
+              // Search by label
+              filterOption={(input, option) =>
+                (option?.label ?? "")
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
               allowClear
             />
           </Form.Item>
