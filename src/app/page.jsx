@@ -396,6 +396,12 @@ const PageContent = () => {
               placeholder="Choose"
               className="w-[300px]"
               options={options.Service_Locations}
+              // Search by label
+              filterOption={(input, option) =>
+                (option?.label ?? "")
+                  .toLowerCase()
+                  .includes(input.toLowerCase())
+              }
               showSearch
               allowClear
             />
